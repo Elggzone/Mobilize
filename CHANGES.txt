@@ -1,5 +1,9 @@
 = Version history =
 
+2012.10.30
+
+- Added: spanish language file submitted by Leonardo
+
 2012.07.18:
 
 - Updated to Elgg 1.8.8
