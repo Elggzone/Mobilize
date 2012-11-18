@@ -1,6 +1,8 @@
-Contributors list
+= Contributors =
 
-Contributors:
+- Nick Scott - http://community.elgg.org/pg/profile/nicholasmscott
+- iOS 5 link fix
 
-* Nick Scott - http://community.elgg.org/pg/profile/nicholasmscott
+- Leonardo Alcantara
+- Spanish language file
 

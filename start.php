@@ -1,8 +1,9 @@
 <?php
 /*
  *
- * Elgg mobilize
+ * Elgg Mobilize
  *
+ * @package mobilize
  * @author Per Jensen - Elggzone
  * @license http://www.gnu.org/licenses/gpl-2.0.html GNU General Public License v2
  * @copyright Copyright (c) 2012, Per Jensen
@@ -20,14 +21,17 @@ function mobilize_init(){
 	elgg_register_page_handler('about', 'mobilize_expages_page_handler');
 	elgg_register_page_handler('terms', 'mobilize_expages_page_handler');
 	elgg_register_page_handler('privacy', 'mobilize_expages_page_handler');
-	
+
+	elgg_register_css('elgg.mobilize', '/css/mobilize.css');
+		
 	detectmobile();	
 	$mobile = detectmobile();
-	
-	$url = elgg_get_simplecache_url('css', 'mobilize');
-	elgg_register_css('elgg.mobilize', $url);
 		
 	if($mobile == true) {
+	
+		if (elgg_get_context() != 'admin') {
+			elgg_load_css('elgg.mobilize');
+		}
 	
 		elgg_set_viewtype('mobile');
 		
@@ -106,6 +110,16 @@ function mobilize_setup_handler() {
 			
 	elgg_unextend_view('page/elements/header', 'search/header');
 	elgg_unregister_menu_item('footer', 'report_this');
+	
+	$href = "http://www.perjensen-online.dk";
+	elgg_register_menu_item('footer', array(
+		'name' => 'copyright_this',
+		'href' => $href,
+		'title' => elgg_echo('mobilize:tooltip'),
+		'text' => elgg_echo('mobilize:copyright'),
+		'priority' => 500,
+		'section' => 'alt',
+	));
 
 	if (elgg_is_logged_in()) {		
 		if (elgg_is_active_plugin('dashboard')) {

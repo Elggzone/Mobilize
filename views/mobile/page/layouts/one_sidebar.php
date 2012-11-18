@@ -18,12 +18,17 @@ if (isset($vars['class'])) {
 }
 
 $context = elgg_get_context();
+
+// navigation defaults to breadcrumbs
+$nav = elgg_extract('nav', $vars, elgg_view('navigation/breadcrumbs'));
 	
 ?>
 
 <div class="<?php echo $class; ?>">
 	<div class="elgg-main elgg-body">
-		<?php
+		<?php			
+			echo $nav;
+			
 			echo elgg_view('page/elements/owner_block', $vars);
 			if (!elgg_in_context('bookmarks')) {
 				echo elgg_view_menu('page', array('sort_by' => 'name'));

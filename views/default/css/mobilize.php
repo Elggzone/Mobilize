@@ -1,33 +1,28 @@
 <?php
-/**
- * Elgg mobilize CSS
+/*
+ *
+ * Mobilize CSS
  *
  * @package mobilize
- * 
+ * @author Per Jensen - Elggzone
+ * @license http://www.gnu.org/licenses/gpl-2.0.html GNU General Public License v2
+ * @copyright Copyright (c) 2012, Per Jensen
+ *
+ * @link http://www.perjensen-online.dk/
+ *
  */
 ?>
 
 html {
-    -webkit-text-size-adjust: none;
+    font-size: 100%;
+    -webkit-text-size-adjust: 100%;
+    -ms-text-size-adjust: 100%;
 }
 body {
 	font-size: 100%;
 }
 select {
 	font-size: 85%;
-}
-.embed-wrapper {
-	width: auto;
-	margin: 0;
-}
-.elgg-module-index {
-	padding: 10px;
-	max-width: 450px;
-    margin: 0 auto;
-}
-.elgg-module-index > .elgg-head > h3{
-	padding: 20px 0;
-	text-align: center;    
 }
 /***** BUTTONS ******/
 .messages-buttonbank .elgg-button {
@@ -76,16 +71,27 @@ select {
 .prl {
 	padding-right: 0;
 }
-/***** DASHBOARD ******/
+/***** MISC ******/
+.embed-wrapper {
+	width: auto;
+	margin: 0;
+}
 .mobile-dashboard {
 	margin-top: -10px;
 }
-/***** FILE - IMG ******/
-.elgg-photo {
-	max-width: 97%;
+.elgg-col-2of3 {
+	width: auto;
+    height: auto;
+}
+.elgg-likes {
+	width: auto;
 }
 .elgg-menu-title li.elgg-menu-item-download {
 	display: none;
+}
+/***** IMG ******/
+.elgg-photo {
+	max-width: 97%;
 }
 .file-photo {
 	margin-top: 15px;
@@ -93,7 +99,22 @@ select {
 .elgg-output img {
 	height: auto;
 }
+.elgg-image-block {
+	padding: 10px 0;
+}
+.elgg-image-block .elgg-image {
+	margin-right: 8px;
+}
+.tidypics-gallery-widget > li {
+	width: auto;
+    margin: 5px 10px;
+}
 /***** FORMS ******/
+.elgg-form-register,
+.elgg-form-user-requestnewpassword {
+	max-width: 450px;
+    margin: 0 auto;
+}
 .elgg-river-responses .elgg-form{
 	float: left;
     width: 100%;
@@ -105,11 +126,6 @@ select {
 }
 .elgg-river-responses .elgg-form .elgg-button {
     margin-left: 0;
-}
-/***** GRID ******/
-.elgg-col-2of3 {
-	width: auto;
-    height: auto;
 }
 /***** GROUPS ******/
 .groups-profile-fields {
@@ -127,6 +143,9 @@ select {
 }
 #groups-tools > li:nth-child(odd) {
 	margin-right: 0;
+}
+.groups-stats {
+    margin-bottom: 5px;
 }
 /***** HEADER ******/
 .elgg-heading-site, .elgg-heading-site:hover {
@@ -223,25 +242,50 @@ select {
 .elgg-menu-hover {
 	width: 200px;
 }
+.elgg-breadcrumbs {
+	font-size: 100%;
+    font-weight: normal;
+	line-height: 1.4em;
+    background: #EEE;
+    padding: 5px 10px;
+}
+.elgg-main .elgg-breadcrumbs {
+	margin: -4px -10px 5px -10px;
+}
+.elgg-breadcrumbs > li > a {
+	color: #555;
+}
+.elgg-breadcrumbs > li:after {
+	color: #555;
+}
 /***** MODULES ******/
-.elgg-likes {
-	width: auto;
+.elgg-module-index {
+	padding: 10px;
+	max-width: 450px;
+    margin: 0 auto;
+}
+.elgg-module-index > .elgg-head > h3{
+	padding: 20px 0;
+	text-align: center;    
 }
 .elgg-module-popup {
 	-webkit-border-radius: 0;
 	-moz-border-radius: 0;
 	border-radius: 0;
 }
+/***** OWNER BLOCK ******/
 .elgg-owner-block {
 	margin-bottom: 10px;
 }
-/***** OWNER BLOCK ******/
 #profile-owner-block .elgg-menu-owner-block select {
 	float: left;
     margin-left: 10px;
 }
 .profile-admin-menu-wrapper {
 	float: left;
+}
+.elgg-owner-block .elgg-image-block {
+	display: none;
 }
 /***** PROFILE ******/
 #profile-owner-block {
@@ -289,15 +333,14 @@ a.elgg-widget-collapse-button:before {
 	margin: 0 auto;
 	padding: 5px 10px;
 }
+.elgg-page-topbar {
+	display: none;
+}
 .elgg-menu-footer-alt,
 .elgg-menu-footer-default {
     display: block;
     float: none;
     text-align: center;
-}
-/***** TOPBAR ******/
-.elgg-page-topbar {
-	display: none;
 }
 /***** SYSTEM MESSAGES ******/
 .elgg-message {
@@ -341,11 +384,10 @@ a.elgg-widget-collapse-button:before {
 	position: relative;
 }
 /***** PAGE BODY LAYOUT ******/
-.elgg-layout {
-	min-height: 360px;
-}
 .elgg-layout-one-sidebar {
 	background: none;
+	width: 100%;
+    float: left;
 }
 .elgg-layout-two-sidebar {
 	background: none;
@@ -353,21 +395,6 @@ a.elgg-widget-collapse-button:before {
 .elgg-layout-one-column {
 	width: auto;
 	padding: 10px 0;
-}
-.elgg-sidebar {
-	display: none;
-}
-.elgg-sidebar-alt {
-	display: none;
-}
-.elgg-main {
-	position: relative;
-	min-height: 360px;
-	padding: 10px;
-}
-.elgg-main > .elgg-head {
-	padding-bottom: 3px;
-	margin-bottom: 10px;
 }
 /***** PAGE FOOTER ******/
 .elgg-page-footer {

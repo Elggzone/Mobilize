@@ -1,7 +1,8 @@
 <?php
 /**
- * Elgg mobilize spanish language
- * @author Leonardo
+ *
+ * Mobilize Spanish language file
+ * @author Leonardo Alcantara 
  *
  * @package mobilize
  * 

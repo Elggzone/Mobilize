@@ -1,6 +1,8 @@
 <?php
 /**
- * Elgg mobilize language
+ *
+ * Mobilize English language file
+ * @author Elggzone - perjensen-online.dk
  *
  * @package mobilize
  * 
@@ -8,6 +10,7 @@
  
 $english = array(
 
+	'mobilize:copyright' 	=> 'Design by Elggzone &copy; 2010 - 2012',
 	'mobilize:info:teaser'	=> 'Use teaser text from?',
 	'mobilize:label:color' 	=> "Header Color, enter Hex color code - #4690D6",
 	'mobilize:label:fp'		=> "Disable friends picker javascript?",	
@@ -20,6 +23,7 @@ $english = array(
 	'mobilize:option:none'	=> "None",
 	'mobilize:pagetitle'	=> 'This is Mobilize',
 	'mobilize:teaser'		=> 'Welcome to our mobile friendly layout. Please login or signup!',
+	'mobilize:tooltip' 		=> 'Design by Elggzone',
 
 );			
 add_translation("en", $english);

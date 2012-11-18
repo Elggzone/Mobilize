@@ -1,4 +1,16 @@
 <?php
+/*
+ *
+ * Mobilize settings
+ *
+ * @package mobilize
+ * @author Per Jensen - Elggzone
+ * @license http://www.gnu.org/licenses/gpl-2.0.html GNU General Public License v2
+ * @copyright Copyright (c) 2012, Per Jensen
+ *
+ * @link http://www.perjensen-online.dk/
+ *
+ */
 
 	if (!isset($vars['entity']->use_friendspicker)) {
 		$vars['entity']->use_friendspicker = 'no';

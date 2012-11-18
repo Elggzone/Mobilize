@@ -11,7 +11,6 @@
  * @uses $vars['class']       Additional class to apply to layout
  */
 
-
 $class = 'elgg-layout elgg-layout-two-sidebar clearfix';
 if (isset($vars['class'])) {
 	$class = "$class {$vars['class']}";

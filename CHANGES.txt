@@ -1,8 +1,16 @@
 = Version history =
 
+2012.11.14:
+
+- Updated to Elgg 1.8.9
+- Added: Code link in manifest
+- Added: breadcrumbs
+- Improved: CSS
+- Removed: page/layouts/one_column.php
+
 2012.10.30
 
-- Added: spanish language file submitted by Leonardo
+- Added: spanish language file
 
 2012.07.18:
 

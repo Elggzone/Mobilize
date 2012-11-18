@@ -1,12 +1,15 @@
 <?php
-/**
- * Elgg mobilize index layout
+/*
+ *
+ * Mobilize custom index
  *
  * @package mobilize
- * 
- * You can edit the layout of this page with your own layout and style. 
- * Whatever you put in this view will appear on the front page of your site.
- * 
+ * @author Per Jensen - Elggzone
+ * @license http://www.gnu.org/licenses/gpl-2.0.html GNU General Public License v2
+ * @copyright Copyright (c) 2012, Per Jensen
+ *
+ * @link http://www.perjensen-online.dk/
+ *
  */
 
 if (!elgg_is_logged_in()){
