@@ -14,7 +14,12 @@
  
 elgg_register_event_handler('init','system','mobilize_init'); 
 
-function mobilize_init(){  
+function mobilize_init(){ 
+
+	$action_path = dirname(__FILE__) . '/actions';
+
+	elgg_register_action("mobilize/admin/settings", "$action_path/settings.php", 'admin');
+	elgg_register_admin_menu_item('configure', 'mobilize', 'settings');		
 
 	elgg_extend_view('css/admin', 'mobilize/admin');
 	
@@ -111,15 +116,17 @@ function mobilize_setup_handler() {
 	elgg_unextend_view('page/elements/header', 'search/header');
 	elgg_unregister_menu_item('footer', 'report_this');
 	
+	// Extend footer with copyright
+	$year = date('Y');	
 	$href = "http://www.perjensen-online.dk";
 	elgg_register_menu_item('footer', array(
 		'name' => 'copyright_this',
 		'href' => $href,
 		'title' => elgg_echo('mobilize:tooltip'),
-		'text' => elgg_echo('mobilize:copyright'),
-		'priority' => 500,
+		'text' => elgg_echo('mobilize:copyright') . $year . elgg_echo(' Elggzone'),
+		'priority' => 1,
 		'section' => 'alt',
-	));
+	));	
 
 	if (elgg_is_logged_in()) {		
 		if (elgg_is_active_plugin('dashboard')) {

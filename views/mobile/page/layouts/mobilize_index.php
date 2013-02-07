@@ -17,7 +17,7 @@ if (!elgg_is_logged_in()){
 	$teaserstring = elgg_get_plugin_setting('teaserstring', 'mobilize');
 	$teaseroutput = elgg_get_plugin_setting('teaseroutput', 'mobilize');
 
-	if ($teaserstring == 'lang') {                
+	if ($teaserstring == 'file') {                
     	$content = elgg_echo("mobilize:teaser");
 	} else if ($teaserstring == 'field') {
 		$content = elgg_echo($teaseroutput);

@@ -10,20 +10,25 @@
  
 $english = array(
 
-	'mobilize:copyright' 	=> 'Design by Elggzone &copy; 2010 - 2012',
-	'mobilize:info:teaser'	=> 'Use teaser text from?',
+	'admin:settings:mobilize'	=> 'Mobilize',
+	'mobilize:panel'			=> 'Plugin Options',
+
+	'mobilize:copyright' 	=> 'Copyright &copy; ',
+	'mobilize:info:general'	=> 'General:',
+	'mobilize:info:message'	=> 'Add Front Page Welcome message:',
+	'mobilize:info:teaser'	=> 'Use text from?',
 	'mobilize:label:color' 	=> "Header Color, enter Hex color code - #4690D6",
 	'mobilize:label:fp'		=> "Disable friends picker javascript?",	
 	'mobilize:label:logo' 	=> "Display your own logo",
-	'mobilize:label:teaser'	=> 'If you choose Text Field above, enter teaser here:',
+	'mobilize:label:teaser'	=> 'Enter text:',
 	'mobilize:menu' 		=> "Sub menu",
 	'mobilize:navigation' 	=> "Navigation",
-	'mobilize:option:lang'	=> "Language File",
+	'mobilize:option:file'	=> "Language File",
 	'mobilize:option:field'	=> "Text Field",
 	'mobilize:option:none'	=> "None",
 	'mobilize:pagetitle'	=> 'This is Mobilize',
 	'mobilize:teaser'		=> 'Welcome to our mobile friendly layout. Please login or signup!',
-	'mobilize:tooltip' 		=> 'Design by Elggzone',
+	'mobilize:tooltip' 		=> 'Visit Elggzone',
 
 );			
 add_translation("en", $english);
