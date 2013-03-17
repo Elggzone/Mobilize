@@ -1,5 +1,10 @@
 = Version history =
 
+2013.03.17:
+
+- Updated to Elgg 1.8.14
+- Added: elgg.org link in footer
+
 2013.02.07:
 
 - Updated to Elgg 1.8.13

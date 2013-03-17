@@ -14,6 +14,7 @@ $english = array(
 	'mobilize:panel'			=> 'Plugin Options',
 
 	'mobilize:copyright' 	=> 'Copyright &copy; ',
+	'mobilize:elgg'      	=> 'Powered by Elgg',
 	'mobilize:info:general'	=> 'General:',
 	'mobilize:info:message'	=> 'Add Front Page Welcome message:',
 	'mobilize:info:teaser'	=> 'Use text from?',

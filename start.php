@@ -126,6 +126,16 @@ function mobilize_setup_handler() {
 		'text' => elgg_echo('mobilize:copyright') . $year . elgg_echo(' Elggzone'),
 		'priority' => 1,
 		'section' => 'alt',
+	));
+	
+	// Extend footer with elgg link
+	$href = "http://elgg.org";
+	elgg_register_menu_item('footer', array(
+		'name' => 'elgg',
+		'href' => $href,
+		'text' => elgg_echo('mobilize:elgg'),
+		'priority' => 2,
+		'section' => 'alt',
 	));	
 
 	if (elgg_is_logged_in()) {		
