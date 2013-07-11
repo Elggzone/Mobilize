@@ -6,7 +6,7 @@
  * @package mobilize
  * @author Per Jensen - Elggzone
  * @license http://www.gnu.org/licenses/gpl-2.0.html GNU General Public License v2
- * @copyright Copyright (c) 2012, Per Jensen
+ * @copyright Copyright (c) 2013, Per Jensen
  *
  * @link http://www.perjensen-online.dk/
  *
@@ -34,15 +34,11 @@ function mobilize_init(){
 		
 	if($mobile == true) {
 	
-		if (elgg_get_context() != 'admin') {
-			elgg_load_css('elgg.mobilize');
-		}
-	
 		elgg_set_viewtype('mobile');
 		
 		if (!elgg_is_active_plugin('custom_index')) {
 			elgg_unregister_plugin_hook_handler('index','system','custom_index');
-			elgg_register_plugin_hook_handler('index', 'system', 'index_handler', 1);
+			elgg_register_plugin_hook_handler('index', 'system', 'index_handler');
 		} 
 		
 		if (elgg_get_plugin_setting('use_friendspicker', 'mobilize') == 'yes'){			
@@ -110,6 +106,10 @@ function detectmobile(){
 
 function mobilize_setup_handler() {
 
+	if (!elgg_in_context('admin')) {
+		elgg_load_css('elgg.mobilize');
+	}
+		
 	// remove more menu dropdown
 	elgg_unregister_plugin_hook_handler('prepare', 'menu:site', 'elgg_site_menu_setup');
 			

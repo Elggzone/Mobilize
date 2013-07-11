@@ -6,7 +6,7 @@
  * @package mobilize
  * @author Per Jensen - Elggzone
  * @license http://www.gnu.org/licenses/gpl-2.0.html GNU General Public License v2
- * @copyright Copyright (c) 2012, Per Jensen
+ * @copyright Copyright (c) 2013, Per Jensen
  *
  * @link http://www.perjensen-online.dk/
  *
@@ -156,6 +156,7 @@ select {
 	font-size: 1.2em;
     left: 10px;
     width: auto;
+	z-index: 100;
 }
 .elgg-heading-site img {
     display: block;
@@ -299,6 +300,16 @@ select {
 	margin: 0;
 }
 /***** WIDGETS ******/
+.elgg-col-2of3,
+#elgg-widget-col-1,
+#elgg-widget-col-2,
+#elgg-widget-col-3 {
+	width: 100%;
+	min-height: 0 !important;
+}
+.elgg-module-widget {
+	margin: 0 0 15px;
+}
 .elgg-module-widget .elgg-icon-delete-alt {
 	display: none;
 }
@@ -404,4 +415,32 @@ a.elgg-widget-collapse-button:before {
 /***** FRIENDSPICKER OFF ******/
 .friends-picker-container h3 {
 	font-size: 1.2em !important;
+}
+/*** WALLED ***/
+.elgg-body-walledgarden {
+	margin: 50px auto 0 auto !important;
+	max-width: 100% !important;
+}
+.elgg-heading-walledgarden {
+	margin-top: 0 !important;
+}
+.elgg-heading-walledgarden br {
+	display: none !important;
+}
+.elgg-module-walledgarden .elgg-form {
+	max-width: 100% !important;
+}
+.elgg-menu-walled-garden {
+	margin: 10px 0 !important;
+}
+.elgg-module-walledgarden .elgg-col .elgg-inner {
+	margin: 0 !important;
+}
+.elgg-walledgarden-double > .elgg-head,
+.elgg-walledgarden-double > .elgg-body,
+.elgg-walledgarden-double > .elgg-foot,
+.elgg-walledgarden-single > .elgg-head,
+.elgg-walledgarden-single > .elgg-body,
+.elgg-walledgarden-single > .elgg-foot {
+	background: transparent !important;
 }
