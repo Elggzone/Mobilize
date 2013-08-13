@@ -148,22 +148,18 @@ select {
     margin-bottom: 5px;
 }
 /***** HEADER ******/
+.elgg-page-header > .elgg-inner h1 {	
+	display: table-cell; 
+	vertical-align: top;
+}
 .elgg-heading-site, .elgg-heading-site:hover {
-    position:absolute; 
-    line-height: 60px;
+    position: relative;
+    line-height: 1;
     font-weight:normal;
     font-style:normal;    
 	font-size: 1.2em;
-    left: 10px;
-    width: auto;
-	z-index: 100;
 }
 .elgg-heading-site img {
-    display: block;
-	position: relative;
-    float: left;
-	margin: 0 auto;
-    padding-top: 10px;
     height: auto;
     width: auto;
 }
@@ -227,18 +223,13 @@ select {
 	display: none;
 }
 .elgg-menu-site-default {
-    position:absolute; 
-    top:50%; 
-    height: 24px; 
-    margin-top:-12px;
-    right: 3px;
+	position: relative;
+	float: right;
+	display: table-cell;
+	padding: 5px 0 0 10px; 
 }
 .elgg-page-header .elgg-menu-site-default select {
-    position:absolute; 
-    top:50%; 
-    height: 24px; 
-    margin-top:-12px;
-    right: 3px;
+    height: 24px;
 }
 .elgg-menu-hover {
 	width: 200px;
@@ -331,9 +322,8 @@ a.elgg-widget-collapse-button:before {
 	min-width: 0;
 }
 .elgg-page-default .elgg-page-header > .elgg-inner {
-	width: auto;
-	margin: 0 auto;
-	height: 60px;
+	width: 100%;
+	height: auto;
 }
 .elgg-page-default .elgg-page-body > .elgg-inner {
 	width: auto;
@@ -389,10 +379,11 @@ a.elgg-widget-collapse-button:before {
 }
 /***** PAGE HEADER ******/
 .elgg-page-header {
-	position: relative;
+	padding: 10px;
 }
 .elgg-page-header > .elgg-inner {
-	position: relative;
+	display: table;
+	border-collapse: collapse;
 }
 /***** PAGE BODY LAYOUT ******/
 .elgg-layout-one-sidebar {
