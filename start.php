@@ -45,7 +45,6 @@ function mobilize_init(){
 			elgg_unregister_js('elgg.friendspicker');
 		}
 						
-		elgg_unregister_js('elgg.tinymce');
 		elgg_unextend_view('input/longtext', 'tinymce/init');
 		elgg_extend_view('page/elements/head','mobilize/meta', 1);
 		
