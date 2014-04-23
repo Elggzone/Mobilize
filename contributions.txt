@@ -1,8 +1,6 @@
 = Contributors =
 
-- Nick Scott - http://community.elgg.org/pg/profile/nicholasmscott
-- iOS 5 link fix
-
-- Leonardo Alcantara
-- Spanish language file
+- Nick Scott, iOS 5 link fix - http://community.elgg.org/profile/nicholasmscott
+- Leonardo Alcantara, Spanish language file
+- Patrik Bogdán, Hungarian language file - http://community.elgg.org/profile/patrikbogdan
 
