@@ -42,9 +42,6 @@ select {
 	color: #4690D6;
 	background: none;
 	border: none;
-	padding: 2px 15px;
-	text-align: center;
-	font-weight: bold;
 	text-decoration: none;
 	text-shadow: none;
 	cursor: pointer;
@@ -61,7 +58,6 @@ select {
 .elgg-button-action:focus {
 	color: #555555;
 	background: none;
-	text-decoration: none;
 	border: none;
 }
 /***** CUSTOM INDEX ******/
@@ -96,9 +92,6 @@ select {
 .file-photo {
 	margin-top: 15px;
 }
-.elgg-output img {
-	height: auto;
-}
 .elgg-image-block {
 	padding: 10px 0;
 }
@@ -115,7 +108,7 @@ select {
 	max-width: 450px;
     margin: 0 auto;
 }
-.elgg-river-responses .elgg-form{
+.elgg-river-responses .elgg-form {
 	float: left;
     width: 100%;
     height: auto;
@@ -149,14 +142,14 @@ select {
 }
 /***** HEADER ******/
 .elgg-page-header > .elgg-inner h1 {	
-	display: table-cell; 
+	display: inline-block; 
 	vertical-align: top;
 }
 .elgg-heading-site, .elgg-heading-site:hover {
     position: relative;
     line-height: 1;
-    font-weight:normal;
-    font-style:normal;    
+    font-weight: normal;
+    font-style: normal;    
 	font-size: 1.2em;
 }
 .elgg-heading-site img {
@@ -182,7 +175,6 @@ select {
 }
 .elgg-menu-entity {
 	vertical-align: right;
-    float: right;    
 	height: auto;
 }
 .elgg-menu-entity li {
@@ -327,11 +319,9 @@ a.elgg-widget-collapse-button:before {
 }
 .elgg-page-default .elgg-page-body > .elgg-inner {
 	width: auto;
-	margin: 0 auto;
 }
 .elgg-page-default .elgg-page-footer > .elgg-inner {
 	width: auto;
-	margin: 0 auto;
 	padding: 5px 10px;
 }
 .elgg-page-topbar {
@@ -379,11 +369,7 @@ a.elgg-widget-collapse-button:before {
 }
 /***** PAGE HEADER ******/
 .elgg-page-header {
-	padding: 10px;
-}
-.elgg-page-header > .elgg-inner {
-	display: table;
-	border-collapse: collapse;
+	padding: 20px 10px;
 }
 /***** PAGE BODY LAYOUT ******/
 .elgg-layout-one-sidebar {
@@ -401,7 +387,7 @@ a.elgg-widget-collapse-button:before {
 /***** PAGE FOOTER ******/
 .elgg-page-footer {
 	position: relative;
-    padding-bottom:20px;
+    padding-bottom: 20px;
 }
 /***** FRIENDSPICKER OFF ******/
 .friends-picker-container h3 {
