@@ -6,7 +6,7 @@
  * @package mobilize
  * @author Per Jensen - Elggzone
  * @license http://www.gnu.org/licenses/gpl-2.0.html GNU General Public License v2
- * @copyright Copyright (c) 2013, Per Jensen
+ * @copyright Copyright (c) 2014, Per Jensen
  *
  * @link http://www.perjensen-online.dk/
  *

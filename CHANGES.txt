@@ -1,5 +1,9 @@
 = Version history =
 
+2014.04.24:
+
+- Updated to Elgg 1.8.19
+
 2013.07.11:
 
 - Updated to Elgg 1.8.16
