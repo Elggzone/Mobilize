@@ -16,9 +16,15 @@ elgg_register_event_handler('init','system','mobilize_init');
 
 function mobilize_init(){ 
 
-	$action_path = dirname(__FILE__) . '/actions';
+	$root = dirname(__FILE__);
+	
+	// Register libraries
+	elgg_register_library("mobilize:hooks", "$root/lib/hooks.php");
+	elgg_register_library("mobilize:menus", "$root/lib/menus.php");
 
-	elgg_register_action("mobilize/admin/settings", "$action_path/settings.php", 'admin');
+	// Register actions
+	elgg_register_action("mobilize/admin/settings", "$root/actions/settings.php", 'admin');
+	
 	elgg_register_admin_menu_item('configure', 'mobilize', 'settings');		
 
 	elgg_extend_view('css/admin', 'mobilize/admin');
@@ -50,7 +56,7 @@ function mobilize_init(){
 		elgg_register_js('mobilize', 'mod/mobilize/vendors/js/mobilize.js', 'footer');
 		elgg_load_js('mobilize');
 
-		elgg_register_event_handler('pagesetup', 'system', 'mobilize_setup_handler', 1000);
+		elgg_register_event_handler('pagesetup', 'system', 'mobilize_pagesetup', 1000);
 	}
 	elgg_register_viewtype_fallback('mobile'); 
 }
@@ -95,8 +101,10 @@ function mobilize_expages_page_handler($page, $handler) {
 	return true;
 }
 
-function mobilize_setup_handler() {
+function mobilize_pagesetup() {
 
+	elgg_load_library("mobilize:menus");
+	
 	if (!elgg_in_context('admin')) {
 		elgg_load_css('elgg.mobilize');
 	}
@@ -105,89 +113,4 @@ function mobilize_setup_handler() {
 	elgg_unregister_plugin_hook_handler('prepare', 'menu:site', 'elgg_site_menu_setup');
 			
 	elgg_unextend_view('page/elements/header', 'search/header');
-	elgg_unregister_menu_item('footer', 'report_this');
-	
-	// Extend footer with copyright
-	$year = date('Y');	
-	$href = "http://www.perjensen-online.dk";
-	elgg_register_menu_item('footer', array(
-		'name' => 'copyright_this',
-		'href' => $href,
-		'title' => elgg_echo('mobilize:tooltip'),
-		'text' => elgg_echo('mobilize:copyright') . $year . elgg_echo(' Elggzone'),
-		'priority' => 1,
-		'section' => 'alt',
-	));
-	
-	// Extend footer with elgg link
-	$href = "http://elgg.org";
-	elgg_register_menu_item('footer', array(
-		'name' => 'elgg',
-		'href' => $href,
-		'text' => elgg_echo('mobilize:elgg'),
-		'priority' => 2,
-		'section' => 'alt',
-	));	
-
-	if (elgg_is_logged_in()) {		
-		if (elgg_is_active_plugin('dashboard')) {
-			elgg_unregister_menu_item('topbar', 'dashboard');		
-			elgg_register_menu_item('site', array(
-				'name' => 'dashboard',
-				'href' => '/dashboard',
-				'text' => elgg_echo('dashboard'),
-			));
-		}		
-		$user = elgg_get_logged_in_user_entity();		
-		elgg_register_menu_item('footer', array(
-			'name' => 'logout',
-			'href' => '/action/logout',
-			'is_action' => TRUE,
-			'text' => elgg_echo('logout'),
-			'priority' => 100,
-			'section' => 'alt',
-		));
-		elgg_register_menu_item('footer', array(
-			'name' => 'usersettings',
-			'href' => "/settings/user/$user->username",
-			'text' => elgg_echo('settings'),
-			'priority' => 101,
-			'section' => 'alt',
-		));
-		elgg_unregister_menu_item('topbar', 'friends');
-		elgg_register_menu_item('site', array(
-			'name' => 'friends',
-			'text' => elgg_echo('friends'),
-			'href' => "/friends/$user->username",
-		));
-		if (elgg_is_active_plugin('profile')) {
-			elgg_unregister_menu_item('topbar', 'profile');
-			elgg_register_menu_item('site', array(
-				'name' => 'profile',
-				'text' => elgg_echo('profile'),
-				'href' => "/profile/$user->username",
-			));
-		}
-		if (elgg_is_active_plugin('messages')) {	
-			elgg_unregister_menu_item('topbar', 'messages');			
-			$num_messages = (int)messages_count_unread();
-			if ($num_messages != 0) {
-				$text .= "<span class=\"messages-new\">$num_messages</span>";
-			}							
-			elgg_register_menu_item('site', array(
-				'name' => 'messages',
-				'href' => 'messages/inbox/' . elgg_get_logged_in_user_entity()->username,
-				'text' => elgg_echo('messages') . $text,
-			));
-		}
-	}	
-	if (elgg_is_admin_logged_in()) {		
-		elgg_register_menu_item('footer', array(
-			'name' => 'administration',
-			'href' => 'admin',
-			'text' => elgg_echo('admin'),
-			'priority' => 102,
-			'section' => 'alt',
-		));
-	}
 }
