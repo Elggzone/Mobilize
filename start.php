@@ -39,6 +39,9 @@ function mobilize_init(){
 		
 	if ($detect->isMobile()) {
 	
+		elgg_register_plugin_hook_handler('head', 'page', 'mobilize_setup_head');
+		
+		elgg_load_library("mobilize:hooks");
 		elgg_set_viewtype('mobile');
 		
 		if (!elgg_is_active_plugin('custom_index')) {
@@ -51,7 +54,6 @@ function mobilize_init(){
 		}
 						
 		elgg_unextend_view('input/longtext', 'tinymce/init');
-		elgg_extend_view('page/elements/head','mobilize/meta', 1);
 		
 		elgg_register_js('mobilize', 'mod/mobilize/vendors/js/mobilize.js', 'footer');
 		elgg_load_js('mobilize');
