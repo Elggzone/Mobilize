@@ -20,8 +20,8 @@ function mobilize_init(){
 	
 	// Register libraries
 	elgg_register_library("mobilize:hooks", "$root/lib/hooks.php");
-	elgg_register_library("mobilize:menus", "$root/lib/menus.php");
-
+	elgg_register_library("mobilize:menus", "$root/lib/menus.php");	
+	
 	// Register actions
 	elgg_register_action("mobilize/admin/settings", "$root/actions/settings.php", 'admin');
 	
@@ -36,17 +36,17 @@ function mobilize_init(){
 	elgg_register_css('elgg.mobilize', '/css/mobilize.css');
 		
 	$detect = new Mobile_Detect;
-		
-	if ($detect->isMobile()) {
 	
+	if ($detect->isMobile()) {
+		
 		elgg_register_plugin_hook_handler('head', 'page', 'mobilize_setup_head');
 		
 		elgg_load_library("mobilize:hooks");
 		elgg_set_viewtype('mobile');
 		
 		if (!elgg_is_active_plugin('custom_index')) {
-			elgg_unregister_plugin_hook_handler('index','system','custom_index');
-			elgg_register_plugin_hook_handler('index', 'system', 'index_handler');
+			// Replace the default index page
+			elgg_register_page_handler('', 'mobilize_front_page');
 		} 
 		
 		if (elgg_get_plugin_setting('use_friendspicker', 'mobilize') == 'yes'){			
@@ -63,18 +63,17 @@ function mobilize_init(){
 	elgg_register_viewtype_fallback('mobile'); 
 }
 
-function index_handler($hook, $type, $return, $params) {
-
-	if ($return == true) {
-		// another hook has already replaced the front page
-		return $return;
-	}
+/**
+ * Serve the front page
+ * 
+ * @return bool Whether the page was sent.
+ */
+function mobilize_front_page() {
 	if (!include_once(dirname(__FILE__) . "/index.php")) {
 		return false;
 	}
-	// return true to signify that we have handled the front page
+
 	return true;
-	
 }
 
 function mobilize_expages_page_handler($page, $handler) {
@@ -112,7 +111,7 @@ function mobilize_pagesetup() {
 	}
 		
 	// remove more menu dropdown
-	elgg_unregister_plugin_hook_handler('prepare', 'menu:site', 'elgg_site_menu_setup');
+	elgg_unregister_plugin_hook_handler('prepare', 'menu:site', '_elgg_site_menu_setup');
 			
 	elgg_unextend_view('page/elements/header', 'search/header');
 }
