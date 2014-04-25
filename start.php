@@ -29,10 +29,9 @@ function mobilize_init(){
 
 	elgg_register_css('elgg.mobilize', '/css/mobilize.css');
 		
-	detectmobile();	
-	$mobile = detectmobile();
+	$detect = new Mobile_Detect;
 		
-	if($mobile == true) {
+	if ($detect->isMobile()) {
 	
 		elgg_set_viewtype('mobile');
 		
@@ -94,14 +93,6 @@ function mobilize_expages_page_handler($page, $handler) {
 	echo elgg_view_page($title, $body);
 
 	return true;
-}
-
-function detectmobile(){
-	if(preg_match('/(alcatel|amoi|android|avantgo|blackberry|benq|cell|cricket|docomo|elaine|htc|iemobile|iphone|ipaq|ipod|j2me|java|midp|mini|mmp|mobi|motorola|nec-|nokia|palm|panasonic|philips|phone|sagem|sharp|sie-|smartphone|sony|symbian|t-mobile|telus|up\.browser|up\.link|vodafone|wap|webos|wireless|xda|xoom|zte)/i', $_SERVER['HTTP_USER_AGENT'])) {
-		return true;
-	} else {
-		return false;
-	}
 }
 
 function mobilize_setup_handler() {
