@@ -33,9 +33,9 @@ $context = elgg_get_context();
 			if (!elgg_in_context('bookmarks')) {
 				echo elgg_view_menu('page', array('sort_by' => 'name'));
 			}
-			if (isset($vars['title'])) {
-				echo elgg_view_title($vars['title']);
-			}
+			
+			echo elgg_view('page/layouts/elements/header', $vars);
+			
 			// @todo deprecated so remove in Elgg 2.0
 			if (isset($vars['area1'])) {
 				echo $vars['area1'];
@@ -43,6 +43,9 @@ $context = elgg_get_context();
 			if (isset($vars['content'])) {
 				echo $vars['content'];
 			}
+			
+			echo elgg_view('page/layouts/elements/footer', $vars);
 		?>
 	</div>
 </div>
+
