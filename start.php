@@ -29,10 +29,6 @@ function mobilize_init(){
 
 	elgg_extend_view('css/admin', 'mobilize/admin');
 	
-	elgg_register_page_handler('about', 'mobilize_expages_page_handler');
-	elgg_register_page_handler('terms', 'mobilize_expages_page_handler');
-	elgg_register_page_handler('privacy', 'mobilize_expages_page_handler');
-
 	elgg_register_css('elgg.mobilize', '/css/mobilize.css');
 		
 	$detect = new Mobile_Detect;
@@ -58,6 +54,10 @@ function mobilize_init(){
 		elgg_register_js('mobilize', 'mod/mobilize/vendors/js/mobilize.js', 'footer');
 		elgg_load_js('mobilize');
 
+		elgg_register_page_handler('about', 'mobilize_expages_page_handler');
+		elgg_register_page_handler('terms', 'mobilize_expages_page_handler');
+		elgg_register_page_handler('privacy', 'mobilize_expages_page_handler');
+	
 		elgg_register_event_handler('pagesetup', 'system', 'mobilize_pagesetup', 1000);
 	}
 	elgg_register_viewtype_fallback('mobile'); 
@@ -76,6 +76,13 @@ function mobilize_front_page() {
 	return true;
 }
 
+/**
+ * External pages page handler
+ *
+ * @param array  $page    URL segements
+ * @param string $handler Handler identifier
+ * @return bool
+ */
 function mobilize_expages_page_handler($page, $handler) {
 
 	if ($handler == 'expages') {
@@ -84,7 +91,6 @@ function mobilize_expages_page_handler($page, $handler) {
 	$type = strtolower($handler);
 
 	$title = elgg_echo("expages:$type");
-	$content = elgg_view_title($title);
 
 	$object = elgg_get_entities(array(
 		'type' => 'object',
@@ -96,7 +102,7 @@ function mobilize_expages_page_handler($page, $handler) {
 	} else {
 		$content .= elgg_echo("expages:notset");
 	}
-	$body = elgg_view_layout('one_sidebar', array('content' => $content));
+	$body = elgg_view_layout('one_column', array('title' => $title, 'content' => $content));
 	echo elgg_view_page($title, $body);
 
 	return true;
@@ -110,7 +116,7 @@ function mobilize_pagesetup() {
 		elgg_load_css('elgg.mobilize');
 	}
 		
-	// remove more menu dropdown
+	// Remove more menu dropdown
 	elgg_unregister_plugin_hook_handler('prepare', 'menu:site', '_elgg_site_menu_setup');
 			
 	elgg_unextend_view('page/elements/header', 'search/header');
