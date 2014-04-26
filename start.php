@@ -29,7 +29,7 @@ function mobilize_init(){
 
 	elgg_extend_view('css/admin', 'mobilize/admin');
 	
-	elgg_register_css('elgg.mobilize', '/css/mobilize.css');
+	elgg_register_css('mobilize', '/css/mobilize.css');
 		
 	$detect = new Mobile_Detect;
 	
@@ -50,6 +50,7 @@ function mobilize_init(){
 		}
 						
 		elgg_unextend_view('input/longtext', 'tinymce/init');
+		elgg_unextend_view('input/longtext', 'ckeditor/init');
 		
 		elgg_register_js('mobilize', 'mod/mobilize/vendors/js/mobilize.js', 'footer');
 		elgg_load_js('mobilize');
@@ -113,7 +114,7 @@ function mobilize_pagesetup() {
 	elgg_load_library("mobilize:menus");
 	
 	if (!elgg_in_context('admin')) {
-		elgg_load_css('elgg.mobilize');
+		elgg_load_css('mobilize');
 	}
 		
 	// Remove more menu dropdown
