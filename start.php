@@ -17,6 +17,7 @@ elgg_register_event_handler('init','system','mobilize_init');
 function mobilize_init(){ 
 
 	$root = dirname(__FILE__);
+	$plugin = elgg_get_plugin_from_id('mobilize');
 	
 	// Register libraries
 	elgg_register_library("mobilize:hooks", "$root/lib/hooks.php");
@@ -29,7 +30,8 @@ function mobilize_init(){
 
 	elgg_extend_view('css/admin', 'mobilize/admin');
 	
-	elgg_register_css('mobilize', '/css/mobilize.css');
+	elgg_register_css('mobilize', '/css/mobilize.css');	
+	elgg_register_css('style', '/css/style.css');
 		
 	$detect = new Mobile_Detect;
 	
@@ -45,7 +47,7 @@ function mobilize_init(){
 			elgg_register_page_handler('', 'mobilize_front_page');
 		} 
 		
-		if (elgg_get_plugin_setting('use_friendspicker', 'mobilize') == 'yes'){			
+		if ($plugin->disable_friendspicker == 'yes'){	
 			elgg_unregister_js('elgg.friendspicker');
 		}
 						
@@ -111,10 +113,16 @@ function mobilize_expages_page_handler($page, $handler) {
 
 function mobilize_pagesetup() {
 
+	$plugin = elgg_get_plugin_from_id('mobilize');
+
 	elgg_load_library("mobilize:menus");
 	
 	if (!elgg_in_context('admin')) {
-		elgg_load_css('mobilize');
+		if ($plugin->theme == 'default') {
+			elgg_load_css('mobilize');
+		} else {
+			elgg_load_css('style');
+		}
 	}
 		
 	// Remove more menu dropdown

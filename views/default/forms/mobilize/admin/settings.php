@@ -14,24 +14,38 @@
 
 $plugin = elgg_get_plugin_from_id('mobilize');
 
-if (!isset($plugin->use_friendspicker)) { $plugin->use_friendspicker = 'no'; }
+if (!isset($plugin->disable_friendspicker)) { $plugin->disable_friendspicker = 'no'; }
 if (!isset($plugin->header_color)) { $plugin->header_color = ''; }
 if (!isset($plugin->showlogo)) { $plugin->showlogo = 'no'; }
 if (!isset($plugin->teaserstring)) { $plugin->teaserstring = 'file'; }
 if (!isset($plugin->teaseroutput)) { $plugin->teaseroutput = $teaseroutput; }
+if (!isset($plugin->theme)) { $plugin->theme = 'default'; }
 
 echo "<div class=\"label\">" . elgg_echo('mobilize:info:general') . "</div>";
+
+echo '<div class="item">';
+echo elgg_echo('mobilize:label:theme');
+echo ' ';
+echo elgg_view('input/dropdown', array(
+	'name' => 'params[theme]',
+	'options_values' => array(
+		'default' => elgg_echo('mobilize:option:default'),
+		'style' => elgg_echo('mobilize:option:style')
+		),
+	'value' => $plugin->theme,
+));
+echo '</div>';
 
 echo '<div class="item">';
 echo elgg_echo('mobilize:label:fp');
 echo ' ';
 echo elgg_view('input/dropdown', array(
-	'name' => 'params[use_friendspicker]',
+	'name' => 'params[disable_friendspicker]',
 	'options_values' => array(
 		'no' => elgg_echo('option:no'),
 		'yes' => elgg_echo('option:yes')
 		),
-	'value' => $plugin->use_friendspicker,
+	'value' => $plugin->disable_friendspicker,
 ));
 echo '</div>';
 
