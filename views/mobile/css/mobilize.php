@@ -34,9 +34,6 @@ select {
 	border: none;
 	text-shadow: none;
 	color: #4690D6;
-        
-	-webkit-box-shadow: none;
-	-moz-box-shadow: none;
 	box-shadow: none;
 }
 .messages-buttonbank .elgg-button:hover {
@@ -49,9 +46,6 @@ select {
 	text-decoration: none;
 	text-shadow: none;
 	cursor: pointer;
-	
-	-webkit-border-radius: 0;
-	-moz-border-radius: 0;
 	border-radius: 0;
 	
 	-webkit-box-shadow: none;
@@ -257,8 +251,6 @@ select {
 	text-align: center;    
 }
 .elgg-module-popup {
-	-webkit-border-radius: 0;
-	-moz-border-radius: 0;
 	border-radius: 0;
 }
 /***** OWNER BLOCK ******/
@@ -332,6 +324,7 @@ a.elgg-widget-collapse-button:before {
 	display: none;
 }
 .elgg-menu-footer-alt,
+.elgg-menu-footer-meta,
 .elgg-menu-footer-default {
     display: block;
     float: none;
@@ -346,9 +339,6 @@ a.elgg-widget-collapse-button:before {
 	cursor: pointer;
 	opacity: 0.9;	
     text-align: center;
-    
-	-webkit-border-radius: 0;
-	-moz-border-radius: 0;
 	border-radius: 0;
 }
 .elgg-state-success {

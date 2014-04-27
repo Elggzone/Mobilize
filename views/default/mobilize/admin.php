@@ -5,6 +5,7 @@
  */
 
 ?>
+/* <style> /**/
 
 /* ***************************************
 	SETTINGS
@@ -39,7 +40,6 @@
 	font-size: 1.2em;
     font-weight: bold;
 }
-.settings-optionspanel .elgg-input-text,
 .settings-optionspanel .elgg-input-dropdown{
 	float: right;
 }
@@ -47,6 +47,7 @@
     margin-bottom: 15px;
 }
 .settings-optionspanel .ez-input-value {
+	float: right;
 	padding: 4px 5px 2px;
     margin-top: -4px;
     width: 100px;
