@@ -11,8 +11,8 @@
  * @link http://www.perjensen-online.dk/
  *
  */
- 
-$header_color = elgg_get_plugin_setting('header_color', 'mobilize');
+
+$plugin = elgg_get_plugin_from_id('mobilize'); 
 
 ?>
 /* <style> /**/
@@ -363,7 +363,7 @@ a.elgg-widget-collapse-button:before {
 }
 /***** PAGE HEADER ******/
 .elgg-page-header {
-	background: <?php echo $header_color; ?>;
+	background: <?php echo $plugin->header_color; ?>;
 	padding: 20px 10px;
 }
 /***** PAGE BODY LAYOUT ******/

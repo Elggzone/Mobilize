@@ -8,9 +8,9 @@ $site_name = $site->name;
 $site_url = elgg_get_site_url();
 $logo_url = $site_url . "mod/mobilize/graphics/logo.png";
 
-$showlogo = elgg_get_plugin_setting('showlogo', 'mobilize');
+$plugin = elgg_get_plugin_from_id('mobilize');
 
-if ($showlogo == 'yes'){
+if ($plugin->showlogo == 'yes'){
 
 ?>
 

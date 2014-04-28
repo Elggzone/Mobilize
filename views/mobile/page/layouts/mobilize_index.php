@@ -13,14 +13,13 @@
  */
 
 if (!elgg_is_logged_in()){
+	
+	$plugin = elgg_get_plugin_from_id('mobilize');
 
-	$teaserstring = elgg_get_plugin_setting('teaserstring', 'mobilize');
-	$teaseroutput = elgg_get_plugin_setting('teaseroutput', 'mobilize');
-
-	if ($teaserstring == 'file') {                
+	if ($plugin->teaserstring == 'file') {                
     	$content = elgg_echo("mobilize:teaser");
-	} else if ($teaserstring == 'field') {
-		$content = elgg_echo($teaseroutput);
+	} else if ($plugin->teaserstring == 'field') {
+		$content = elgg_echo($plugin->teaseroutput);
 	} else {
 		//
 	}
