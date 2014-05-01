@@ -3,16 +3,18 @@
 	<name>Mobilize</name>
 	<id>mobilize</id>
 	<author>Per Jensen - Elggzone</author>
-	<version>2014.04.24</version>
-	<category>plugin</category>
-	<description>Elgg mobile responsive plugin</description>
+	<version>2014.05.01</version>
+	<category>Elggzone</category>
+	<category>mobile</category>
+	<category>enhancement</category>
+	<description>Elgg mobile plugin</description>
 	<website>http://www.perjensen-online.dk</website>
 	<repository>https://github.com/Elggzone/Mobilize</repository>
 	<copyright>(C) Per Jensen - perjensen-online.dk 2014</copyright>
 	<license>GNU Public License version 2</license>
 	<requires>
 		<type>elgg_release</type>
-		<version>1.8</version>
+		<version>1.9</version>
 	</requires>
 	<admin_interface>simple</admin_interface>
 </plugin_manifest>
