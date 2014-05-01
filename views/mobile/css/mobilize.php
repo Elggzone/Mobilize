@@ -333,12 +333,13 @@ a.elgg-widget-collapse-button:before {
 /***** SYSTEM MESSAGES ******/
 .elgg-message {
 	color: white;
-	font-weight: bold;
+	font-weight: normal;
 	display: block;
 	padding: 10px;
 	cursor: pointer;
 	opacity: 0.9;	
     text-align: center;
+	box-shadow: none;
 	border-radius: 0;
 }
 .elgg-state-success {

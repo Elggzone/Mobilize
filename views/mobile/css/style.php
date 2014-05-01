@@ -615,18 +615,36 @@ a.elgg-widget-collapse-button:before {
     float: none;
     text-align: center;
 }
+/***** MESSAGES ******/
+.messages-container .elgg-list {
+	border-top: none;
+}
+.messages-container ul li {
+	border-color: #DCDCDC;
+    border-style: solid;
+    border-width: 0 1px 1px 1px;
+
+	padding: 8px 20px;
+}
+.messages-container ul li:first-child {
+    border-top-width: 1px;
+}
+.messages-container ul li:nth-child(odd) {
+	background-color: #F0F0F0;
+}
+.messages-container ul li:nth-child(even) {
+	background-color: #F9F9F9;
+}
 /***** SYSTEM MESSAGES ******/
 .elgg-message {
 	color: white;
-	font-weight: bold;
+	font-weight: normal;
 	display: block;
 	padding: 10px;
 	cursor: pointer;
 	opacity: 0.9;	
     text-align: center;
-    
-	-webkit-border-radius: 0;
-	-moz-border-radius: 0;
+	box-shadow: none;
 	border-radius: 0;
 }
 .elgg-state-success {
